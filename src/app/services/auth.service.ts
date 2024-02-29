@@ -61,4 +61,20 @@ export class AuthService {
     return localStorage.getItem('username')
   }
 
+  isLoggedIn(){
+    return localStorage.getItem('token')
+  }
+
+  isAdmin(){
+    return localStorage.getItem('role')=== 'ADMIN'
+  }
+
+  isPlayer(){
+      return localStorage.getItem('role')=== 'PLAYER'
+  }
+
+  getUserRole(): string{
+    return this.userRole;
+  }
+
 }

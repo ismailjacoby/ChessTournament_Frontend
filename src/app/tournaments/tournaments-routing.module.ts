@@ -6,13 +6,6 @@ import {ListComponent} from "./list/list.component";
 import {TournamentsComponent} from "./tournaments.component";
 
 const routes: Routes = [
-  {path:'tournaments', component: TournamentsComponent,
-  children:[
-    { path: '', redirectTo: 'list', pathMatch: 'full' },
-    {path:'list', component:ListComponent},
-    {path:'create', component:CreateComponent},
-    {path:'details/:id', component:DetailsComponent},
-  ]}
 ];
 
 @NgModule({
