@@ -1,0 +1,83 @@
+
+<form class="form-container" [formGroup]="form" (ngSubmit)="createTournament()">
+  <div class="create-title">
+    <h1>Create Tournament</h1>
+  </div>
+  <div>
+    <label for="form-tournamentName">Tournament Name:</label><br>
+    <input type="text" id="form-tournamentName" formControlName="name">
+  </div>
+
+  <div>
+    <label for="form-location">Location:</label><br>
+    <input type="text" id="form-location" formControlName="location">
+  </div>
+
+  <div>
+    <label for="form-minPlayers">Min Players:</label><br>
+    <input type="number" id="form-minPlayers" formControlName="minPlayers">
+  </div>
+  <div>
+    <label for="form-maxPlayers">Max Players:</label><br>
+    <input type="number" id="form-maxPlayers" formControlName="maxPlayers">
+  </div>
+
+  <div>
+    <label for="form-minElo">Min ELO:</label><br>
+    <input type="number" id="form-minElo" formControlName="minElo">
+  </div>
+  <div>
+    <label for="form-maxElo">Max ELO:</label><br>
+    <input type="number" id="form-maxElo" formControlName="maxElo">
+  </div>
+
+  <div>
+    <label for="form-category">Category</label><br>
+    <select name="gender" id="form-category" formControlName="category">
+      <option value="JUNIOR">Junior</option>
+      <option value="SENIOR">Senior</option>
+      <option value="VETERAN">Veteran</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="form-status">Status</label><br>
+    <select name="gender" id="form-status" formControlName="status">
+      <option value="WAITING_FOR_PLAYERS">Waiting for players</option>
+      <option value="IN_PROGRESS">In progress</option>
+      <option value="COMPLETED">Completed</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="form-currentRound">Current Round:</label><br>
+    <input type="number" id="form-currentRound" formControlName="currentRound">
+  </div>
+
+  <div>
+    <label for="form-registrationEndDate">Registration End Date:</label><br>
+    <input type="date" id="form-registrationEndDate" formControlName="registrationEndDate">
+  </div>
+
+  <div class="womaOnly">
+    <label for="form-womenOnly">Woman Only?</label>
+    <input type="checkbox" id="form-womenOnly" formControlName="womenOnly" class="checkbox">
+  </div>
+
+  <div>
+    <input type="submit" value="Submit" id="btn-submit">
+  </div>
+</form>
+
+<div *ngIf="successMessage" class="message success-message">
+  <span class="icon">&#10003;</span>
+  <span>{{ successMessage }}</span>
+</div>
+<div *ngIf="errorMessage" class="message error-message">
+  <span class="icon">&#10005;</span>
+  <span>{{ errorMessage }}</span>
+</div>
+
+<div class="returnDiv">
+  <a href="" class="returnLink" routerLink="/tournaments">Return to Tournaments</a>
+</div>

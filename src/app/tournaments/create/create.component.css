@@ -1,0 +1,105 @@
+/* Form */
+.form-container{
+  padding: 50px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Title */
+h1{
+  font-size: 20px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Label */
+label{
+  opacity: 75%;
+  font-size: 14px;
+}
+
+/* Input */
+
+input,select{
+  width: 250px;
+  height: 30px;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,0.5);
+}
+
+/* Submit Button */
+
+#btn-submit{
+  margin-top: 10px;
+  background-color: #015afe;
+  border: 1px solid #015afe;
+  color: #fefefe ;
+  border-radius: 5px;
+  height: 30px;
+  transition: 0.2s;
+}
+
+#btn-submit:hover{
+  background-color: #fefefe;
+  border: 1px solid #015afe;
+  color: #015afe;
+  cursor: pointer;
+}
+
+.womaOnly{
+  margin: 15px 0 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.womaOnly input{
+  height: 15px;
+  width: 15px;
+}
+
+.checkbox{
+  margin-left: 10px;
+}
+
+.returnDiv{
+  margin-top: 15px;
+  text-align: center;
+}
+.returnLink{
+  text-decoration: none;
+  font-size: 12px;
+  color: #015afe;
+}
+.returnLink:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.message {
+  padding: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  width: 210px;
+  margin: 0 auto;
+}
+.message span{
+  text-align: center;
+}
+
+.success-message {
+  background-color: #ecffeb;
+  color: #09fe01;
+}
+
+.error-message {
+  background-color: #ffe8e8;
+  color: #fe0101;
+}
+
+.icon {
+  font-size: 20px;
+  margin-right: 10px;
+}

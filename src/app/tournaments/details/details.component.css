@@ -1,0 +1,116 @@
+.tournament-body{
+  background-color: #fff;
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+.tournament-header h1 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+.tournament-details h2 {
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+.tournament-details {
+  margin-left: 20px;
+}
+
+
+.tournament-header{
+  margin: 10px;
+}
+
+.details{
+  background-color: #f4f4f9;
+}
+
+.returnDiv{
+  text-align: center;
+}
+.returnLink{
+  text-decoration: none;
+  font-size: 12px;
+  color: #015afe;
+}
+.returnLink:hover{
+  text-decoration: underline;
+  cursor: pointer;
+}
+.icon-details{
+  height: 15px;
+  width: auto;
+  margin-right: 5px;
+}
+
+.player-information{
+  background-color: #f4f4f9;
+  border-radius: 10px;
+  padding: 10px;
+  margin: 5px;
+}
+.register-button{
+  margin-top: 25px;
+  text-align: center;
+}
+.register-button button{
+  margin: 5px;
+}
+
+.btn-register-tournament{
+  background-color: #015afe;
+  border: 1px solid #015afe;
+  color: #fefefe ;
+  border-radius: 5px;
+  padding: 10px 10px;
+  transition: 0.1s;
+}
+
+.btn-register-tournament:hover{
+  background-color: #fefefe;
+  border: 1px solid #015afe;
+  color: #015afe;
+  cursor: pointer;
+}
+
+.btn-unregister-tournament{
+  background-color: #fefefe;
+  border: 1px solid #015afe;
+  color: #015afe ;
+  border-radius: 5px;
+  padding: 10px 10px;
+  transition: 0.1s;
+}
+
+.btn-unregister-tournament:hover{
+  background-color: #015afe;
+  border: 1px solid #015afe;
+  color: #fefefe;
+  cursor: pointer;
+}
+
+.message {
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+}
+
+.success-message {
+  background-color: #ecffeb;
+  color: #09fe01;
+}
+
+.error-message {
+  background-color: #ffe8e8;
+  color: #fe0101;
+}
+
+.icon {
+  font-size: 20px;
+  margin-right: 10px;
+}

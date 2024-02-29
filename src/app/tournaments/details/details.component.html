@@ -1,0 +1,44 @@
+<div class="tournament-body">
+  <div class="tournament-header">
+    <div class="tournament-details">
+      <h1>Tournament Details:</h1>
+      <p><img src="../../../assets/icons/details/hash.svg" alt="Map Pin Icon" class="icon-details">ID: {{tournament?.id}}</p>
+      <p><img src="../../../assets/icons/details/identification-card.svg" alt="ID card Icon" class="icon-details">Name: {{tournament?.name}}</p>
+      <p><img src="../../../assets/icons/details/map-pin.svg" alt="Map Pin Icon" class="icon-details">Location: {{tournament?.location}}</p>
+      <p><img src="../../../assets/icons/details/user.svg" alt="User Icon" class="icon-details">Min Players: {{tournament?.minPlayers}}</p>
+      <p><img src="../../../assets/icons/details/users.svg" alt="Users Icon" class="icon-details">Max Players: {{tournament?.maxPlayers}}</p>
+      <p><img src="../../../assets/icons/details/list-numbers.svg" alt="List Icon" class="icon-details">Players currently signed up: {{tournament?.nbOfRegisteredPlayers}}</p>
+      <p><img src="../../../assets/icons/details/minus-circle.svg" alt="Minus Icon" class="icon-details">Min ELO: {{tournament?.minElo}}</p>
+      <p><img src="../../../assets/icons/details/plus-circle.svg" alt="Max Icon" class="icon-details">Max ELO: {{tournament?.maxElo}}</p>
+      <p><img src="../../../assets/icons/details/tag.svg" alt="Tag Icon" class="icon-details">Category: {{tournament?.category | titlecase}}</p>
+      <p><img src="../../../assets/icons/details/circle-notch.svg" alt="Status Icon" class="icon-details">Status: {{tournament?.status | titlecase}}</p>
+      <p><img src="../../../assets/icons/details/hourglass.svg" alt="Hourglass Icon" class="icon-details">Current Round: {{tournament?.currentRound}}</p>
+      <p><img src="../../../assets/icons/details/calendar.svg" alt="Calendar Icon" class="icon-details">Registration End Date: {{tournament?.registrationEndDate | date: 'dd/MM/YYY'}}</p>
+      <br>
+      <h1>Registered Players:</h1>
+      <div class="player-information" *ngFor="let participant of tournament?.participants">
+        <p><img src="assets/icons/details/user.svg" alt="Badge Icon" class="icon-details">Username: {{participant?.username}}</p>
+        <p><img src="assets/icons/details/envelope.svg" alt="Badge Icon" class="icon-details">Username: {{participant?.email}}</p>
+      </div>
+      <div class="register-button">
+        <button class="btn-register-tournament" *ngIf="_authservice.userRole == 'ADMIN' || _authservice.userRole == 'PLAYER' " (click)="registerToTournament()">Register for Tournament</button>
+        <button class="btn-unregister-tournament" *ngIf="_authservice.userRole == 'ADMIN' || _authservice.userRole == 'PLAYER' " (click)="unregisterFromTournament()">Unregister from Tournament</button>
+      </div>
+    </div>
+    <div *ngIf="registerSuccessMessage" class="message success-message">
+      <span class="icon">&#10003;</span>
+      <span>{{ registerSuccessMessage }}</span>
+    </div>
+
+    <div *ngIf="registerErrorMessage" class="message error-message">
+      <span class="icon">&#10005;</span>
+      <span>{{ registerErrorMessage }}</span>
+    </div>
+  </div>
+</div>
+
+
+<div class="returnDiv">
+  <a href="" class="returnLink" routerLink="/tournaments">Return to Tournaments</a>
+</div>
+

@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <div>
+    <img src="assets/logo/CheckmateLogo.png"  routerLink="/" id="navbar-logo">
+  </div>
+  <div>
+    <ul class="navbar-links">
+      <li><a routerLink="/players" routerLinkActive="active-link" *ngIf="_authService.userRole === 'ADMIN'">Register&nbsp;Player</a></li>
+      <li><a routerLink="/tournaments/list" routerLinkActive="active-link">Tournaments</a></li>
+      <li><a routerLink="/score" routerLinkActive="active-link">Score</a></li>
+    </ul>
+  </div>
+  <div>
+    <span *ngIf="_authService.userRole" class="user-role">{{_authService.userRole }}</span>
+    <a routerLink="/login"><button class="btn-account" *ngIf="!(_authService.userRole === 'ADMIN' || _authService.userRole === 'PLAYER')">Login</button></a>
+    <button class="btn-account" *ngIf="_authService.userRole === 'ADMIN' || _authService.userRole === 'PLAYER'"  (click)="logout()">Logout</button>
+  </div>
+</nav>

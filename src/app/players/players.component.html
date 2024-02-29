@@ -1,0 +1,49 @@
+
+<form class="form-container" [formGroup]="form" (ngSubmit)="createPlayer()">
+  <div class="register-title">
+    <h1>Register Player</h1>
+  </div>
+  <div>
+    <label for="form-username">Username:</label><br>
+    <input type="text" id="form-username" formControlName="username">
+  </div>
+
+  <div>
+    <label for="form-email">Email:</label><br>
+    <input type="text" id="form-email" formControlName="email">
+  </div>
+
+  <div>
+    <label for="form-dateOfBirth">Date of birth:</label><br>
+    <input type="date" id="form-dateOfBirth" formControlName="dateOfBirth">
+  </div>
+
+  <div>
+    <label for="form-gender-select">Gender</label><br>
+    <select name="gender" id="form-gender-select" formControlName="gender">
+      <option value="MALE">Male</option>
+      <option value="FEMALE">Female</option>
+      <option value="OTHER">Other</option>
+    </select>
+  </div>
+
+  <div>
+    <label for="form-elo">Elo</label><br>
+    <input type="number" id="form-elo" formControlName="elo">
+  </div>
+
+  <div>
+    <input type="submit" value="Submit" id="btn-submit">
+  </div>
+
+  <div *ngIf="successMessage" class="message success-message">
+    <span class="icon">&#10003;</span>
+    <span>{{ successMessage }}</span>
+  </div>
+  <div *ngIf="errorMessage" class="message error-message">
+    <span class="icon">&#10005;</span>
+    <span>{{ errorMessage }}</span>
+  </div>
+
+</form>
+
