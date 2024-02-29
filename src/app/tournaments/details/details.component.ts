@@ -37,6 +37,7 @@ export class DetailsComponent implements OnInit{
 
 
   registerToTournament() {
+    console.log('Attempting to register for tournament.');
     const username: string = this._authservice.connectedUser.value?.username || '';
     const tournamentId = this.tournament.id;
 
@@ -52,11 +53,19 @@ export class DetailsComponent implements OnInit{
         console.log('Registered successfully for the tournament.');
         this.registerErrorMessage = '';
         this.registerSuccessMessage = 'Registered successfully for the tournament.';
+        this.fetchTournamentData();
       },
       error => {
-        console.error('Error registering for the tournament:', error);
-        this.registerSuccessMessage = '';
-        this.registerErrorMessage = 'Error registering for the tournament: ' + error.error;
+        if (error.status === 200) {
+          console.log('Registered successfully for the tournament.');
+          this.registerErrorMessage = '';
+          this.registerSuccessMessage = 'Registered successfully for the tournament.';
+          this.fetchTournamentData();
+        } else{
+          console.error('Error registering for the tournament:', error);
+          this.registerSuccessMessage = '';
+          this.registerErrorMessage = 'Error registering for the tournament: ' + error.error;
+        }
       }
     );
   }
@@ -76,10 +85,33 @@ export class DetailsComponent implements OnInit{
       () => {
         this.registerErrorMessage = '';
         this.registerSuccessMessage = 'Successfully unregistered from the tournament.';
+        this.fetchTournamentData();
       },
       error => {
-        this.registerSuccessMessage = '';
-        this.registerErrorMessage = 'Error unregistering from the tournament: ' + error.error;
+        // Check if the status code is 200, treat it as a successful response
+        if (error.status === 200) {
+          console.log('Successfully unregistered from the tournament.');
+          this.registerErrorMessage = '';
+          this.registerSuccessMessage = 'Successfully unregistered from the tournament.';
+          this.fetchTournamentData();
+
+        } else {
+          console.error('Error unregistering from the tournament:', error);
+          this.registerSuccessMessage = '';
+          this.registerErrorMessage = 'Error unregistering from the tournament: ' + error.error;
+        }
+      }
+    );
+  }
+
+  fetchTournamentData() {
+    this._tournamentService.getTournamentById(this.tournament.id).subscribe(
+      (tournament: Tournament) => {
+        console.log('Fetched updated tournament data:', tournament);
+        this.tournament = tournament;
+      },
+      error => {
+        console.error('Error fetching tournament data:', error);
       }
     );
   }

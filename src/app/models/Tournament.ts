@@ -12,6 +12,7 @@ export interface Tournament {
   currentRound: number;
   registrationEndDate: Date;
   participants: Participant[];
+  hasStarted: boolean;
 }
 
 interface Participant {

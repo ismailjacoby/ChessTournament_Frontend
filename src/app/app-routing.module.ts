@@ -7,8 +7,8 @@ import {ScoreComponent} from "./components/score/score.component";
 import {CreateComponent} from "./tournaments/create/create.component";
 import {DetailsComponent} from "./tournaments/details/details.component";
 import {ListComponent} from "./tournaments/list/list.component";
-import {isConnectedGuard} from "./guards/isConnected.guard";
-import {isAdminGuard} from "./guards/isAdmin.guard";
+import {isConnectedGuard} from "./utils/guards/isConnected.guard";
+import {isAdminGuard} from "./utils/guards/isAdmin.guard";
 
 const routes: Routes = [
   {path:'players', component: PlayersComponent, canActivate: [isAdminGuard]} ,

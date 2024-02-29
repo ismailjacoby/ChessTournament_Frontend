@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 import {PlayerService} from "../../services/player.service";
-import {isInThePast} from "../../validators/FormValidator";
+import {isInThePast} from "../../utils/validators/FormValidator";
 
 export interface Player{
   username: string;

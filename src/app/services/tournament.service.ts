@@ -33,4 +33,10 @@ export class TournamentService {
   deleteTournament(id:number){
     return this._http.delete(`${this.apiUrl}delete/${id}`);
   }
+
+  startTournament(tournament:Tournament){
+    const url = `${this.apiUrl}start-tournament`;
+    const params = new HttpParams().set('id', tournament.id.toString());
+    return this._http.post(url, params);
+  }
 }

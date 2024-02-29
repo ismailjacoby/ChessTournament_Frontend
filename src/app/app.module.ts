@@ -10,7 +10,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HTTP_INTERCEPTORS, HttpClientModule} from "@angular/common/http";
 import { LoginComponent } from './components/login/login.component';
 import { ScoreComponent } from './components/score/score.component';
-import {authInterceptor} from "./interceptor/auth.interceptor";
+import {authInterceptor} from "./utils/interceptors/auth.interceptor";
 import {DetailsComponent} from "./tournaments/details/details.component";
 import {ListComponent} from "./tournaments/list/list.component";
 import {CreateComponent} from "./tournaments/create/create.component";

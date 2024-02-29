@@ -18,7 +18,7 @@
       <h1>Registered Players:</h1>
       <div class="player-information" *ngFor="let participant of tournament?.participants">
         <p><img src="assets/icons/details/user.svg" alt="Badge Icon" class="icon-details">Username: {{participant?.username}}</p>
-        <p><img src="assets/icons/details/envelope.svg" alt="Badge Icon" class="icon-details">Username: {{participant?.email}}</p>
+        <p><img src="assets/icons/details/envelope.svg" alt="Badge Icon" class="icon-details">Email: {{participant?.email}}</p>
       </div>
       <div class="register-button">
         <button class="btn-register-tournament" *ngIf="_authservice.userRole == 'ADMIN' || _authservice.userRole == 'PLAYER' " (click)="registerToTournament()">Register for Tournament</button>

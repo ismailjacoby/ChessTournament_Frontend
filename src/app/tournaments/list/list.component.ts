@@ -11,6 +11,7 @@ import {AuthService} from "../../services/auth.service";
 export class ListComponent implements OnInit{
   tournaments: Tournament[] = [];
 
+
   constructor(private _tournamentService: TournamentService, public _authService: AuthService) {
   }
 
@@ -37,5 +38,25 @@ export class ListComponent implements OnInit{
     }, error => {
       console.error('Error deleting tournament:', error);
     });
+  }
+
+
+
+  startTournament(tournament: Tournament) {
+    this._tournamentService.startTournament(tournament).subscribe(
+      (respone: any) => {
+        console.log('Tournament started successfully');
+        tournament.hasStarted=true;
+        this.loadTournaments();
+      }, (error) =>{
+        if (error.status === 200){
+          console.log('Tournament started successfully');
+          tournament.hasStarted=true;
+          this.loadTournaments();
+        }else{
+          console.error('Error starting tournament:', error)
+        }
+      }
+    )
   }
 }

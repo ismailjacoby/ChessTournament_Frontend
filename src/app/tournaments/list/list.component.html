@@ -38,7 +38,7 @@
       <td>{{tournament.registrationEndDate | date: 'dd/MM/YYYY'}}</td>
       <td>{{tournament.currentRound}}</td>
       <td class="action-icons">
-        <button class="start-icon" *ngIf="_authService.userRole == 'ADMIN'"><img src="assets/icons/details/play.svg" class="btn-list-icons"></button>
+        <button class="start-icon" (click)="startTournament(tournament)" *ngIf="_authService.userRole == 'ADMIN' && !tournament.hasStarted"><img src="assets/icons/details/play.svg" class="btn-list-icons"></button>
         <button class="view-icon" [routerLink]="['/tournaments/details', tournament.id]"><img src="assets/icons/eye.svg" class="btn-list-icons"></button>
         <button class="delete-icon" (click)="onDelete(tournament.id)" *ngIf="_authService.userRole === 'ADMIN'"><img src="assets/icons/trash.svg" class="btn-list-icons"></button>
       </td>
